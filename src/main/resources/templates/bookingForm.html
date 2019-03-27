@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Booking</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-sm-6  my-5">
+
+            <h5 class="text-primary">New Booking </h5>
+            <form th:action="@{/saveBooking}" modelAttribute="booking, shipping" method="post">
+
+                <div class="form-group">
+                    <input type="text" th:value="${booking.date}" name="date" class="form-control" placeholder="MM-DD-YY">
+                </div>
+
+                <button class="btn btn-success">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <a class="col-sm-10 mx-auto" th:href="@{/addShipping}">Add new book</a>
+
+
+
+
+
+</body>
+</html>

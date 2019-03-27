@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Books</title>
+</head>
+<body>
+
+<div th:if="${!books.empty}" class="col-sm-10 mx-auto">
+    <table class="table">
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>ReleaseYear</th>
+            <th>Quantity</th>
+        </tr>
+        <tbody>
+
+        <tr th:each="book : ${books}">
+            <td th:text="${book.ISBN}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.releaseYear}"></td>
+            <td th:text="${book.quantity}"></td>
+
+            <td>
+                <a class="btn btn-warning" th:href="@{/edit/}+${book.ISBN}">Edit</a>
+            </td>
+            <td>
+                <a class="btn btn-warning" th:href="@{/delete/}+${book.ISBN}">Delete</a>
+            </td>
+
+            <td>
+                <a class="btn btn-warning" th:href="@{/addShipping}">Book</a>
+            </td>
+            <td>
+                <a class="btn btn-warning" th:href="@{/addBooking}">Order</a>
+            </td>
+
+
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+<a class="col-sm-10 mx-auto" th:href="@{/addBook}">Add new book</a>
+<a class="col-sm-10 mx-auto" th:href="@{//booking/{1}}"> See booking</a>
+
+
+
+</body>
+</html>

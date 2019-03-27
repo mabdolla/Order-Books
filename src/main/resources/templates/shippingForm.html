@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body>
+
+    <div class="container">
+        <h3 class="text-primary"> Spring Boot demo  </h3>
+        <div class="col-sm-6  my-5">
+
+            <h5 class="text-primary">Register New Building </h5>
+            <form th:action="@{/saveShipping}" modelAttribute="shipping" method="post">
+
+
+                <div class="form-group">
+                    <input type="text" th:value="${shipping.firstName}" name="firstName" class="form-control" placeholder="firstname">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" th:value="${shipping.lastName}" name="lastName" class="form-control" placeholder="lastName">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" th:value="${shipping.address}" name="address" class="form-control" placeholder="address">
+                </div>
+                <div class="form-group">
+                    <input type="text" th:value="${shipping.postalCode}" name="postalCode" class="form-control" placeholder="postalCode">
+                </div>
+
+                <button class="btn btn-success">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <a class="col-sm-10 mx-auto" th:href="@{/addShipping}">Add new book</a>
+
+
+
+</body>
+</html>

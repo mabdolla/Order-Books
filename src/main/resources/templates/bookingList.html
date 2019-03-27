@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Bookings</title>
+</head>
+<body>
+    <div class="col-sm-10 mx-auto">
+        <table class="table">
+            <tr>
+                <th>Date</th>
+                <th>Shipping ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Address</th>
+                <th>Postal code</th>
+                <th>Books</th>
+
+            </tr>
+            <tbody>
+
+            <tr>
+                <td th:text="${booking.date}"></td>
+                <td th:text="${booking.shipping.id}"></td>
+                <td th:text="${booking.shipping.firstName}"></td>
+                <td th:text="${booking.shipping.lastName}"></td>
+                <td th:text="${booking.shipping.address}"></td>
+                <td th:text="${booking.shipping.postalCode}"></td>
+                <td th:text="${booking.books}"></td>
+
+                <td>
+                    <a class="btn btn-warning" th:href="@{/addBooking}">Book</a>
+                </td>
+
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+</body>
+</html>
